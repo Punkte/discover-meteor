@@ -1,12 +1,10 @@
-import { Template } from 'meteor/templating'
-import { ReactiveVar } from 'meteor/reactive-var'
+import React from 'react'
+import { Meteor } from 'meteor/meteor'
+import { render } from 'react-dom'
 
-import './main.html'
-
-/**
- * Components
- */
-import './components/form.html'
-import './components/form.js'
-import './components/list.html'
-import './components/list.js'
+import App from '../imports/ui/App.js'
+ 
+Meteor.startup(() => {
+    console.log('bonsoir')
+  render(<App />, document.getElementById('root'))
+});
