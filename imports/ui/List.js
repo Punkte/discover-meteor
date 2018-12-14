@@ -26,7 +26,7 @@ class List extends Component {
                         <td>{ item.user.nom }</td>
                         <td>{ item.user.prenom }</td>
                         <td>
-                            <a target="_blank" href={`http://github.com/${ item.github }`}>
+                            <a target="_blank" href={`http://github.com/${ item.user.github }`}>
                             { item.user.github }
                             </a>
                         </td>
