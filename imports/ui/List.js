@@ -14,33 +14,36 @@ class List extends Component {
     render() {
         return(
             <table>
-                <tr>
-                    <th>Nom</th>
-                    <th>Prénom</th>
-                    <th>Github</th>
-                    <th>Delete</th>
-                </tr>
-
-                {this.props.users.map((item, index) => (
+                <tbody>
                     <tr>
-                        <td>{ item.user.nom }</td>
-                        <td>{ item.user.prenom }</td>
-                        <td>
-                            <a target="_blank" href={`http://github.com/${ item.user.github }`}>
-                            { item.user.github }
-                            </a>
-                        </td>
-                        <td>
-                            <button     
-                                id={ item._id } 
-                                class="delete-btn"
-                                onClick={ this.deleteById }
-                                >
-                                Delete</button>
-                        </td>
+                        <th>Nom</th>
+                        <th>Prénom</th>
+                        <th>Github</th>
+                        <th>Delete</th>
                     </tr>
 
-                ))}
+                    {this.props.users.map((item, index) => (
+                        <tr key={index}>
+                            <td>{ item.user.nom }</td>
+                            <td>{ item.user.prenom }</td>
+                            <td>
+                                <a target="_blank" href={`http://github.com/${ item.user.github }`}>
+                                { item.user.github }
+                                </a>
+                            </td>
+                            <td>
+                                <button     
+                                    id={ item._id } 
+                                    className="delete-btn"
+                                    onClick={ this.deleteById }
+                                    >
+                                        Delete
+                                    </button>
+                            </td>
+                        </tr>
+
+                    ))}
+                </tbody>
             </table>
         )
     }
